@@ -20,10 +20,10 @@ async def variable(var):
         pass
     else:
         return
-    """
+    
     Manage most of ConfigVars setting, set new var, get current var,
     or delete var...
-    """
+    
     if HEROKU_APP_NAME is not None:
         app = Heroku.app(HEROKU_APP_NAME)
     else:
