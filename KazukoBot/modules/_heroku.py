@@ -6,7 +6,7 @@ import heroku3
 import requests
 from KazukoBot import pbot
 from KazukoBot import HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
-from KazukoBot.events import register
+from KazukoBot.event import register
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
