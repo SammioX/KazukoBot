@@ -108,7 +108,8 @@ if ENV:
     SPAMWATCH = os.environ.get("SPAMWATCH_API", None)
     LOG_GROUP_ID = os.environ.get('LOG_GROUP_ID', None)
     ALLOW_CHATS = os.environ.get("ALLOW_CHATS", True)
-
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", True)
+    HEROKU_API_KEY = os.environ.get("HEROKU_APP_NAME", True)
     try:
         BL_CHATS = set(int(x) for x in os.environ.get("BL_CHATS", "").split())
     except ValueError:
@@ -182,7 +183,8 @@ else:
     SPAMWATCH = Config.SPAMWATCH_API
     INFOPIC = Config.INFOPIC
     REDIS_URL = Config.REDIS_URL
-    
+    HEROKU_APP_NAME = Config.HEROKU_APP_NAME
+    HEROKU_API_KEY = Config.HEROKU_API_KEY
     try:
         BL_CHATS = set(int(x) for x in Config.BL_CHATS or [])
     except ValueError:
