@@ -12,7 +12,7 @@ heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 
 
-@register(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)") THis is better
+@register(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)") 
 async def variable(var):
     if var.fwd_from:
         return
