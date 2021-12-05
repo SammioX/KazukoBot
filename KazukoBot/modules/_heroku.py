@@ -4,7 +4,7 @@ import os
 
 import heroku3
 import requests
-
+from KazukoBot import pbot
 from KazukoBot import HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
 from KazukoBot.events import register
 
@@ -12,7 +12,7 @@ heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 
 
-@app(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
+@pbot(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
 async def variable(var):
     if var.fwd_from:
         return
@@ -101,7 +101,7 @@ async def variable(var):
             return await m.edit(f"**{variable}**  `is not exists`")
 
 
-@app(pattern="^/usage(?: |$)")
+@pbot(pattern="^/usage(?: |$)")
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return
@@ -168,7 +168,7 @@ async def dyno_usage(dyno):
     )
 
 
-@app(pattern="^/logs$")
+@pbot(pattern="^/logs$")
 async def _(dyno):
     if dyno.fwd_from:
         return
