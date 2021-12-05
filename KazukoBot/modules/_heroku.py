@@ -11,7 +11,8 @@ from KazukoBot.event import register
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 
-"""@register(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)") THis is better"""
+"""
+@register(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)") THis is better
 async def variable(var):
     if var.fwd_from:
         return
@@ -98,7 +99,9 @@ async def variable(var):
             del heroku_var[variable]
         else:
             return await m.edit(f"**{variable}**  `is not exists`")
-
+Idk about the configuration of your bot settings, at this moment i've no time to read it will fix soon ASP after December 17
+Wait until 17 
+"""
 
 @register(pattern="^/usage(?: |$)")
 async def dyno_usage(dyno):
