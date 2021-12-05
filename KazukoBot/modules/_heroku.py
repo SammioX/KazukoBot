@@ -4,15 +4,14 @@ import os
 
 import heroku3
 import requests
-from KazukoBot import pbot
-from KazukoBot import HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
+
+from KazukoBot import telethn as borg, HEROKU_APP_NAME, HEROKU_API_KEY, OWNER_ID
 from KazukoBot.event import register
 
 heroku_api = "https://api.heroku.com"
 Heroku = heroku3.from_key(HEROKU_API_KEY)
 
-
-@pbot(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
+@register(pattern="^/(set|see|del) var(?: |$)(.*)(?: |$)([\s\S]*)")
 async def variable(var):
     if var.fwd_from:
         return
@@ -101,7 +100,7 @@ async def variable(var):
             return await m.edit(f"**{variable}**  `is not exists`")
 
 
-@pbot(pattern="^/usage(?: |$)")
+@register(pattern="^/usage(?: |$)")
 async def dyno_usage(dyno):
     if dyno.fwd_from:
         return
@@ -112,7 +111,7 @@ async def dyno_usage(dyno):
     """
     Get your account Dyno Usage
     """
-    die = await dyno.reply("**please wait...**")
+    die = await dyno.reply("**Processing...**")
     useragent = (
         "Mozilla/5.0 (Linux; Android 10; SM-G975F) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -168,7 +167,7 @@ async def dyno_usage(dyno):
     )
 
 
-@pbot(pattern="^/logs$")
+@register(pattern="^/logs$")
 async def _(dyno):
     if dyno.fwd_from:
         return
