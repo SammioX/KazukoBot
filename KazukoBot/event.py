@@ -1,5 +1,5 @@
 from telethon import events
-from KazukoBot import client
+from KazukoBot import telethn
 
 
 def register(**args):
