@@ -25,7 +25,9 @@ News channel as at [Kazuko Updates](https://t.me/KazukoUpdates)
   
 ```
 Fill in all the details, Deploy!
-Now go to https://dashboard.heroku.com/apps/(app-name)/resources ( Replace (app-name) with your app name )
+⚠️ I didn't deploy it, so I don't know any errors priest, if you find any error inbox me through [telegram](https://t.me/Oxidisedman) \n
+Don't forget to show logs-, I can't predict anything with logs-
+[![Deploy To Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Oxidisedman/KazukoBot.git)
 REMEMBER: Turn on worker dyno (Don't worry It's free :D) & Webhook
 Now send the bot /start, If it doesn't respond go to https://dashboard.heroku.com/apps/(app-name)/settings and remove webhook and port.
 ```
